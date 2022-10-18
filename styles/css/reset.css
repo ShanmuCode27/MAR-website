@@ -46,3 +46,26 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* my changes */
+@font-face {
+	font-family: gotham-rounded-bold;
+	src: url('../../fonts/Gotham\ Rounded\ Bold.otf');
+}
+
+@font-face {
+	font-family: gotham-rounded-medium;
+	src: url('../../fonts/Gotham\ Rounded\ Medium.otf');
+}
+
+@font-face {
+	font-family: gotham-rounded-light;
+	src: url('../../fonts/Gotham\ Rounded\ Light.otf');
+}
+
+
+html, body {
+	margin:0;
+	padding:0;
+	overflow-x: hidden;
+}

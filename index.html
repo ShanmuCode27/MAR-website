@@ -1,290 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marvellous Graphic</title>
-  <link rel="stylesheet" href="./styles/css/reset.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./styles/css/bootstrap.min.css">
+  <title>UI Assignment 1</title>
+  <!-- reset css -->
+  <link rel="stylesheet" href="./styles/css/reset.css">
+
+  <!-- Bootstrap 5 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <!-- fontawesome for icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- bootstrap icon  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- animate on scroll css  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- main css -->
   <link rel="stylesheet" href="./styles/css/main.css">
 </head>
+
 <body>
-  <div class="container-fluid overflow-hidden vh-700"
-      style="color: #474749;">
-    <section class="row vh-100 flex-column home-bg p-0" id="home">
-      <nav class="navbar navbar-expand-lg" style="flex:0 0 20%;">
-        <div class="container-fluid mt-3">
-          <a href="#" class="navbar-brand d-lg-none">
-            <img src="./images/logo.png"
-                style="filter: brightness(120%);
-                padding-bottom: 2em; width: 10rem;" 
-                alt="logo" class="img-fluid mylogo">
-          </a>
-          <button class="navbar-toggler collapsed d-flex d-lg-none flex-column
-              justify-content-around" type="button" data-bs-toggle="collapse"
-              data-bs-target="#nav"
-              aria-controls="nav" aria-expanded="false"
-              aria-label="Toggle navigation">
-            <span class="toggler-icon top-bar"></span>
-            <span class="toggler-icon middle-bar"></span>
-            <span class="toggler-icon bottom-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="nav">
-              <ul class=
-                  "navbar-nav mx-auto align-items-center font-weight-bold
-                  lh-lg" style="font-family: gothamBold; font-size: 0.95rem;
-                  letter-spacing: 0.2rem;">
+  <!-- navigation content -->
+  <nav>
+    <div class="navbar navbar-expand-lg w-100 nav-position">
+      <div class="container">
+        <a class="navbar-brand d-lg-none ps-3" href="#">
+          <img src="./images/header/logo.png" alt="Logo" width="100" height="50">
+        </a>
+        <button class="navbar-toggler navbar-dark 
+        me-lg-5" id="open-menu" type="button" data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="offcanvas offcanvas-end bg-secondary w-100"
+        tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">
+              <img src="./images/header/logo.png" alt="Logo" width="90" height="40">
+            </h5>
+            <button type="button" class="btn-close pe-5 pt-5 white-color" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <ul class="navbar-nav mx-auto py-5 ps-lg-3" data-bs-dismiss="offcanvas">
+                <li class="nav-item border-setup">
+                  <a href="#header" class="nav-link active text-dark pt-3 px-lg-5 text-center">
+                    HOME
+                  </a>
+                </li>
+                <li class="nav-item border-setup">
+                  <a href="#design" class="nav-link text-dark pt-3 pe-lg-5 ps-lg-2 text-center">
+                    PRODUCTS
+                  </a>
+                </li>
                 <li class="nav-item">
-                  <a href="#home" class="nav-link active text-danger px-4">HOME</a>
-                  </li>
-                <li class="nav-item px-4">
-                  <a href="#services" class="nav-link active text-danger">OUR SERVICES</a>
+                  <img src="./images/header/logo.png" class="d-lg-block d-none mx-1 px-5 nav_logo" alt="logo" width="250" height="70">
                 </li>
-                <li class="nav-item px-4">
-                    <img src="./images/logo.png" class="d-lg-block d-none px-5"
-                    style="filter: brightness(1.8); padding-bottom: 2em; width: 250px;"
-                    alt="logo"> 
+                <li class="nav-item border-setup">
+                  <a href="#our-community" class="nav-link active text-dark pt-3 ps-lg-5 pe-lg-2
+                      text-center">
+                    DESIGNS
+                  </a>
                 </li>
-                <li class="nav-item px-4">
-                  <a href="#about" class="nav-link active text-danger">ABOUT</a>
-                </li>
-                <li class="nav-item px-4">
-                  <a href="#contact" class="nav-link active text-danger">CONTACT</a>
+                <li class="nav-item border-setup">
+                  <a href="#subscribe" class="nav-link active text-dark pt-3 px-lg-5 text-center">
+                    CONTACT
+                  </a>
                 </li>
               </ul>
           </div>
         </div>
-      </nav>  
-      <div class="col text-light d-flex align-items-center
-          justify-content-center order-md-2" style="flex:0 0 10%;">
-        <div class="row" style="font-size: 1.4em;" >
-          <i class="col fa-brands fa-facebook-f" style="padding: 0 0.4em; color: blue;"></i>
-          <i class="col fa-brands fa-instagram" style="padding: 0 0.4em; color: #e834eb;"></i>
-          <i class="col fa-brands fa-whatsapp" style="padding: 0 0.4em; color: #0ba339;"></i>
-        </div>
+  
       </div>
-      <div class="col text-light d-flex justify-content-center
-          align-items-center order-md-1" style="flex:0 0 70%;
-          letter-spacing: 0.3rem; line-height: 2.1em;">
-        <div class="row flex-column align-items-center">
-          <div class="col text-dark d-flex justify-content-center
-              text-center" style="font-size: 2.2rem; font-weight: bold;">
-            PRINT YOUR DREAMS
-          </div>
-          <div class="col text-dark d-flex justify-content-center py-1
-              text-center" style="font-family: gotham; font-size: 0.9rem; 
-              letter-spacing: 0.2rem;">
-            with our customer prioritized service
-          </div>
-          <div class="col col-sm-12 d-flex justify-content-center"
-              style="padding: 1em 0;">
-            <button class="btn text-light sect-btn">GET STARTED</button>
-          </div>
-        </div>
+    </div>
+  </nav>
+
+  <!-- section - header -->
+  <header id="header">
+
+    <!-- main content -->
+    <div class="container">
+      <div class="text-center main_content_wrapper">
+        <h1 class="text-danger">MARVELLOUS GRAPHIC </h1>
+        <p class="text-dark gotham_md">PRINT YOUR DREAMS</p>
+        <button type="button" class="btn btn-success px-4 py-3 rounded-1 my_btn">GET STARTED</button>
       </div>
-    </section>
-    <section class="row p-0 flex-lg-row flex-column flex-wrap grey-bg" id="about">
-      <div class=
-          "col d-flex justify-content-center align-items-center ml-sm-0 ml-5"
-          id="photoapp"
-          style="height: 65vh;">
-        <div class=
-            "row flex-column w-100 mt-5 justify-content-center
-            justify-content-lg-start ms-md-5 ps-md-5 mb-md-3">
-          <div class="col text-left mb-4 sect-topic lh-sm">
-            <p>ONE PRINTING SOLUTION</p>
-            <p>FOR ALL YOUR NEEDS</p>
-          </div>
-          <div class="col">
-            <p class="text-start text-muted lh-lg sect-para slant-right">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 sed do eiusmod tempor incididunt ut labore et dolore  magna
-                 aliqua. Ut <span style="font-weight: bold; color: #000;">enim
-                 ad minim</span> veniam, quis nostrud exercitation
-                 ullamco laboris nisi ut alquip ex ea commodo consequat.
-            </span>
-          </p>
-          </div>
-          <div class="col">
-            <div class=
-                "col col-sm-12 d-flex justify-content-center
-                justify-content-md-start" style="padding: 1em 0;">
-              <button class="btn text-light col-md-5 col sect-btn">
-                GET STARTED
-              </button>
-            </div>
+    </div>
+
+    <!-- social icon link -->
+    <div class="container">
+      <div class="pb-3 text-center">
+        <a href="#" class="link-dark text-decoration-none px-1">
+          <i class="fa-brands fa-facebook-f fs-4" style="color: rgb(9, 9, 255);"></i>
+        </a>
+        <a href="#" class="link-dark text-decoration-none px-1">
+          <i class="fa-brands fa-whatsapp fs-4" style="color: rgb(6, 138, 6);"></i>
+        </a>
+        <a href="#" class="link-dark text-decoration-none px-1">
+          <i class="fa-brands fa-instagram fs-4" style="color: rgb(187, 7, 136);"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- section - rappresent your life with a simple photo -->
+  <section id="rappresent">
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex position-relative wrapper" data-aos="fade-up">
+          <img class="img-fluid p-0 phone_bg" src="./images/rappresent/sect-2.png" alt="mobile holding image" width="50"
+          height="50">
+          <div class="p-lg-0 rappresent_content_wrapper">
+            <h2 class="text-uppercase pt-0 pb-3  text-danger content_heading">
+              one place for all your <br> printing needs
+            </h2>
+            <p class="pt-3 pb-4 lh-lg grey_color gotham_light content_para">
+              Marvellous Graphic is a single stop for all your printing needs.<br>
+              We focus highly on quality and standards With the <br> 
+              perspective of the customer's mindset and <br>  most importantly <span>creative</span>
+              visualization <br> in serving your imagination.
+            </p>
+            <button type="button" class="btn btn-success rounded-1 my_btn">GET STARTED</button>
           </div>
         </div>
       </div>
-      <div class="col col-lg-6 mb-0 d-flex align-items-center
-          justify-content-center justify-content-lg-end px-5">
-        <img src="https://p.kindpng.com/picc/s/215-2154096_creativity-digital-marketing-digital-marketing-creative-png-transparent.png" alt="phone-bg"
-            class="img-fluid mb-0 px-5" style="margin-left: -5rem;">
-      </div>
-    </section>
-    <section class="row" id="services">
-      <div id="carouselSect3" class="carousel slide" data-bs-touch="true"
-          data-bs-interval="3000" data-bs-ride="carousel">
-        <div class="carousel-inner sect-3-carousel">
-          <div class="carousel-item active">
-            <div class="row flex-column flex-lg-row" style="height: 40rem;">
-              <div class="col order-lg-1 p-0 d-flex justify-content-center align-items-center">
-                <img src="./images/1.jpg" class="d-block w-100 img-fluid"
-                    alt="design mobile background">
-              </div>
-              <div class="col order-lg-2">
-                <div class="row flex-column">
-                  <div class="col d-flex justify-content-center
-                      align-items-center ml-sm-0 ml-5">
-                    <div class="row flex-column w-100 justify-content-center
-                        justify-content-lg-start" style="margin: 7em 5em 0 5em">
-                      <div class="col text-left mb-3 h5 lh-1 sect-topic">
-                        <p>FRAMES </p>
-                      </div>
-                      <div class="col">
-                        <p class="text-justify text-md-start text-muted h6 lh-lg
-                            sect-para slant-right">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. sed do eiusmod
-                            tempor incididunt ut labore et dolore magna
-                            aliqua. Ut <span style="font-weight: bold;">enim ad
-                            minim</span> veniam, quis nostrud exercitation
-                            ullamco laboris nisi ut alquip ex ea commodo
-                            consequat.
-                        </p>
-                      </div>
-                      <div class="col">
-                        <div class="col col-sm-12 d-flex justify-content-center
-                            justify-content-md-start" style="padding: 1em 0;">
-                            <button class=
-                                "btn text-light col-md-5 col sect-btn">
-                                TRY OUT
-                            </button>
-                        </div>
-                      </div>
-                    </div>
+    </div>
+  </section>
+
+  <!-- section - DESIGN -->
+  <section id="design">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 p-0" data-aos="fade-up">
+          <div id="design-carousel" class="carousel slide" data-bs-touch="true"
+            data-bs-interval="3000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-12 col-lg-7 mt-5 text-center text-lg-start p-0 pt-5">
+                    <img class="pt-lg-5 move_img_left" src="./images/design/frame.jpg" alt="frame image"
+                      width="322" height="462">
                   </div>
-                  <div class="col carousel-control pl-5 my-5">
-                    <div class="count"></div>
-                    <div class=
-                        "row w-50 d-none d-md-flex justify-content-start mt-2"
-                        style="margin-left: 5em; gap: 0rem;">
-                      <a class="carousel-control-prev"
-                          data-bs-target="#carouselSect3" data-bs-slide="prev">
-                        <span><i class="fa fa-angle-left arrow"></i></span>
-                        <span class="visually-hidden">Previous</span>
-                      </a>
-                      <a class="carousel-control-next"
-                          data-bs-target="#carouselSect3" data-bs-slide="next">
-                        <span><i class="fa fa-angle-right arrow"></i></span>
-                        <span class="visually-hidden">Next</span>
-                      </a>
+                  <div class="col py-5 my-5">
+                    <div class="p-0 pt-lg-5 px-4 pb-3 content_wrapper">
+                      <h2 class="text-uppercase pt-0 pb-1 green_color content_heading">
+                        Frame
+                      </h2>
+                      <p class="pt-3 pb-4 lh-lg grey_color gotham_light content_para">
+                        Fill your walls with the love of memories. Customized and perfectly designed
+                        Frames to suit your requirements.
+                      </p>
+                      <button type="button" class="btn btn-success mb-5 rounded-0 my_btn">CONTACT</button>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Rest of the slides are loaded via script  -->
+
+            </div>
+            <div class="d-lg-inline design_carousel_controls">
+              <div class="count_slides ps-lg-3 py-2 text-center text-lg-start"></div>
+              <div class="d-flex justify-content-center align-items-end pt-3 pt-lg-0 d-lg-inline control_buttons">
+                <button class="carousel-control-prev control_prev" type="button" data-bs-target="#design-carousel"
+                    data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon control_prev_icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next control_next" type="button" data-bs-target="#design-carousel"
+                    data-bs-slide="next">
+                  <span class="carousel-control-next-icon control_next_icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
           </div>
-          <!-- Rest of the carousel slides are loaded here by javascript -->
         </div>
       </div>
-    </section>
-    <section class="row flex-wrap grey-bg" style="min-height: 70vh;">
-      <div class="col-md-4 d-flex justify-content-center align-items-center">
-        <div class="row flex-column mx-5">
-          <div class="col text-center py-2">
-          <img src="./images/logo.png" alt="logo green" style="width: 200px;">
-          </div>
-          <div class="col px-5 text-center py-2">
-            <span style="font-family: gothamBold; letter-spacing: 0.2rem;">
-              MARVELLOUS GRAPHIC
-            </span>
-          </div>
-          <div class="col px-5 text-center py-2 lh-1">
-            <span style="font-size: 0.65rem; letter-spacing: 0.1rem;">
-             Lorem Ipsum dolor sit <br> ahmet, consectetur <br> edipiscing elit.
-            </span></div>
-        </div>
-      </div>
-      <div class="col d-flex justify-content-start align-items-center
-          flex-column pb-md-5 pe-md-5 mb-5 me-md-5" style="overflow: hidden;">
-          
-        <div class="d-flex flex-row justify-content-end align-items-end w-100
-            mt-5 mb-2">
-          <div class="row d-none d-md-flex justify-content-center
-              justify-content-md-end pt-4" style="height: 50px;">
-            <a class="carousel-control-prev go-previous"
-                data-bs-target="#carouselSect4" data-bs-slide="prev">
-              <span><i class="fa fa-angle-left arrow"></i></span>
-              <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next go-next" 
-               data-bs-target="#carouselSect4" data-bs-slide="next">
-              <span><i class="fa fa-angle-right arrow"></i></span>
-              <span class="visually-hidden">Next</span>
-            </a>
-          </div>
-        </div>
+    </div>
+  </section>
 
-        <div class="owl-carousel owl-theme">
-          <img class="d-block w-100 img-fluid" src="images/ad-1.jpeg" alt="ad one">
-          <img class="d-block w-100 img-fluid" src="images/ad-2.jpeg" alt="ad one">
+  <!-- section - OUR COMMUNITY -->
+  <section id="our-community">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-12 col-lg-3 p-0 px-3 px-lg-0 pe-lg-3">
+          <div class="d-flex flex-column justify-content-center align-items-center h-100 ps-0 pe-lg-5 pt-4">
+            <div class="text-center">
+              <img src="./images/header/logo.png" alt="logo-green" width="100" height="50">
+            </div>
+            <h2 class="text-uppercase fs-6 py-4">our designs</h2>
+            <p class="text-center small_text_1">
+              Its just two words <br> Creative <br> Elegant
+            </p>
+          </div>
         </div>
-
-      </div>
-    </section>
-    <section class=
-        "row vh-100 sect-6-bg justify-content-center align-items-center" id="contact">
-      <div class=
-          "col d-flex flex-column justify-content-center align-items-center">
-        <p class="text-light h4" style="letter-spacing: 0.2rem;">
-          GET IN TOUCH
-        </p>
-        <form class="mt-3" id="myForm">
-          <input type="text" class="form-control my-5" placeholder="MESSAGE"
-                name="message" id="email" style="height: 12rem;  min-width: 18rem;">
-          <div class="input-group" >
-            <input type="text" class="form-control" placeholder="YOUR EMAIL"
-                name="email" id="email" style="height: 4rem;  min-width: 14rem;">
-            <div class="input-group-append">
-              <button id="submit-btn" class="btn btn-success icon-btn"
-                  type="submit">
-                <i class="bi bi-check h1"></i>
+        <div class="col-12 col-lg-9 p-0 py-lg-5 my-lg-5">
+          <div id="our-community-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true"
+            data-bs-interval="2000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row flex-column flex-md-row gap-2 gap-md-0 py-4">
+                  <div class="col">
+                    <img src="./images/our-community-and-footer/van.jpg" class="d-block w-100 img-fluid"
+                      alt="image of van">
+                  </div>
+                  <div class="col">
+                    <img src="./images/our-community-and-footer/leaf.jpg" class="d-block w-100 img-fluid"
+                      alt="leaf image">
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row flex-column flex-md-row gap-2 gap-md-0 py-4">
+                  <div class="col">
+                    <img src="./images/our-community-and-footer/van.jpg" class="d-block w-100 img-fluid"
+                      alt="image of van">
+                  </div>
+                  <div class="col">
+                    <img src="./images/our-community-and-footer/leaf.jpg" class="d-block w-100 img-fluid"
+                      alt="leaf image">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center d-lg-inline our_community_carousel_controls">
+              <button class="carousel-control-prev control_prev" type="button" data-bs-target="#our-community-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon control_prev_icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next control_next" type="button" data-bs-target="#our-community-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon control_next_icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
               </button>
             </div>
           </div>
-        </form>
+        </div>
       </div>
-    </section>
-    <footer class="row flex-column flex-lg-row" style="min-height: 17.5vh;">
-      <div class="col order-lg-2 d-flex align-items-center justify-content-center justify-content-lg-end mt-3 pe-5">
-        <img src="./images/logo.png" alt="logo" class="img-fluid me-md-5 pe-md-5" style="width: 200px;">
-      </div>
-      <div class="col order-lg-1 pt-5 px-5" style="font-size: 0.9rem;">
-        <div class="row w-100 flex-column">
-          <div class="col p-0 d-flex flex-column
-              justify-content-start align-items-start text-center"
-              style="font-family: gothamBold; letter-spacing: 0.1rem;">
-            <p>No 02, </p>
-            <p>Muthuwella Mawatha</p>
-            <p>Colombo - 15</p>
-            <p>Sri Lanka</p>
+    </div>
+  </section>
+
+  <!-- section - subscribe to us -->
+  <section id="subscribe">
+    <div class="container">
+      <h2 class="text-uppercase text-light fs-4 text-center subscribe_title" data-aos="fade-up">get in touch with us</h2>
+      <form class="mx-auto subscribe_input" id="myForm" data-aos="fade-left">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="YOUR EMAIL" aria-label="Your Email Address"
+            aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary icon_btn_style" type="submit" id="button-addon2">
+            <i class="bi bi-check h1"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- section - download  -->
+  <section id="download">
+    <div class="container">
+      <div class="row">
+        <div class="col py-4 my-5" data-aos="fade-up">
+          <div class="row row-cols-1">
+            <div class="col pt-2">
+              <h2 class="text-uppercase text-center fs-5">why us</h2>
+            </div>
+            <div class="col">
+              <p class="text-uppercase text-center grey_color small_text_2 gotham_md">
+                We all need that one person - one brand - one company <br>
+                whom we can reply on for best job to be done. <br>
+                Try out our customer first business model and you'll be amazed
+              </p>
+            </div>
           </div>
         </div>
-        <div class="row mt-2 mb-3">
-          <span class="p-1" style="font-family: gothamBold; letter-spacing: 0.1rem; font-size: 0.9rem;">All Rights Reserved</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- section - footer  -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-10 order-2 order-lg-1 py-3 pt-lg-5 pb-lg-4 px-lg-0">
+          <div class="row">
+            <div class="col-12 text-uppercase text-center text-lg-start small_text_4">
+              Hotline - 011-7703204
+              <br>
+              <br>
+              No 02,
+              <br>
+              Muthuwella Mawatha,
+              <br>
+              Colombo - 15
+              <br>
+              Sri Lanka
+            </div>
+          </div>
+          <div class="row">
+            <div class="col pt-3 text-center text-lg-start small_text_3">
+              Copyright by marvellous graphic <span class="d-none d-sm-inline"> - </span>  <span class="move-next-line">all right reserved @2022 </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-2 order-1 order-lg-2 text-center text-lg-end px-0 pt-3 pt-lg-5 pb-lg-4">
+          <img src="./images/header/logo.png" alt="logo green"  width="150" height="70">
         </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
-  <script src="./scripts/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512
-  -bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+  <!-- JavaScript Bundle with Popper for bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+  <!-- animate on scroll js  -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- email js  -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- script -->
   <script src="./scripts/script.js"></script>
 </body>
+
 </html>

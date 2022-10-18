@@ -1,0 +1,36 @@
+@media screen and (max-width: 992px) {
+  #header nav ul li {
+    border-top: 1px transparent white !important;
+    border-bottom: 1px transparent white !important;
+  }
+  #header nav ul li a {
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #rappresent .wrapper {
+    padding: 0 !important;
+  }
+  #rappresent .wrapper img {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #rappresent .rappresent_content_wrapper {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5rem 0 !important;
+    text-align: center;
+  }
+  .content_wrapper {
+    text-align: center;
+  }
+  .move_img_left {
+    margin: 0 auto;
+    position: relative;
+  }
+  br {
+    display: none;
+  }
+}/*# sourceMappingURL=responsive.css.map */

@@ -1,136 +1,62 @@
-imgArr = [2,3,4,5,6,7,8,9];
-imgTitleArr = ['T-SHIRTS', 'MUGS', 'GIFT ITEMS', 'WEDDING PHOTOGRAPHY', 'CERTIFICATES', 'DESK CALENDAR', 'BANNERS', 'BUSINESS CARDS'];
-imgDescriptionArr = ['Test Data', 'Test Data', 'Test Data', 'Test Data', 'Test Data', 'Test Data', 'Test Data', 'Test Data'];
+const title = ['mug.jpg', 'visiting.jpg', 'calendar.jpg', 'wedding.jpg', 'tshirt.jpg', 'certificate.jpg', 'gift.jpg'];
+const description = [
+  'We got you covered with variety of mugs. The cool gift to enjoy a hot drink',
+  'The reputation depends on the look and quality of your business cards. Get the best one !',
+  'The plan ahead is always on the calendar',
+  'Make your Wedding, Birthday Celebrations, Anniversaries and any kind of occassion the best experience',
+  'Show your brand in the look !. Customized high quality Tshirt for your team',
+  'The awards are to be remembered for the good',
+  'What would you wanna wish to gift ?'
+]
 
-let slide = document.createElement('div');
-slide.classList.add('carousel-item');
-for (let i = 0; i < 8; i++) {
+for(let i = 0; i < title.length; i++) {
+
+    let index = title[i].indexOf('.');
+    let name = title[i].substring(0, index);
 
     let slideContent = 
-  `<div class="row flex-column flex-lg-row">
-    <div class="col order-lg-1 p-0 d-flex justify-content-center align-items-center">
-      <img src="./images/${imgArr[i]}.jpg" class="d-block w-100 img-fluid"
-          alt="design mobile background">
+  `
+  <div class="row">
+  <div class="col-12 col-lg-7 mt-5 text-center text-lg-start p-0 pt-5">
+    <img class="pt-lg-5 move_img_left" src="./images/design/${title[i]}" alt="frame image"
+      width="322" height="462">
+  </div>
+  <div class="col py-5 my-5">
+    <div class="p-0 pt-lg-5 px-4 pb-3 content_wrapper">
+      <h2 class="text-uppercase pt-0 pb-1 green_color content_heading">
+        ${name}
+      </h2>
+      <p class="pt-3 pb-4 lh-lg grey_color gotham_light content_para">
+        ${description[i]}
+      </p>
+      <button type="button" class="btn btn-success mb-5 rounded-0 my_btn">CONTACT</button>
     </div>
-    <div class="col order-lg-2">
-      <div class="row flex-column">
-        <div class="col d-flex justify-content-center
-            align-items-center ml-sm-0 ml-5">
-          <div class="row flex-column w-100 justify-content-center
-              justify-content-lg-start" style="margin: 7em 5em 0 5em">
-            <div class="col text-left mb-3 h5 lh-1 sect-topic">
-              <p>${imgTitleArr[i]} </p>
-            </div>
-            <div class="col">
-              <p class="text-justify text-md-start text-muted h6 lh-lg
-                  sect-para slant-right">
-                  ${imgDescriptionArr[i]}
-              </p>
-            </div>
-            <div class="col">
-              <div class="col col-sm-12 d-flex justify-content-center
-                  justify-content-md-start" style="padding: 1em 0;">
-                  <button class=
-                      "btn text-light col-md-5 col sect-btn">
-                      TRY OUT
-                  </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col carousel-control pl-5 my-5">
-          <div class="count"></div>
-          <div class="row w-50 d-none d-md-flex justify-content-start mt-2"
-              style="margin-left: 5em; gap: 0rem;">
-            <a class="carousel-control-prev"
-                data-bs-target="#carouselSect3" data-bs-slide="prev">
-              <span><i class="fa fa-angle-left arrow"></i></span>
-              <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next"
-                data-bs-target="#carouselSect3" data-bs-slide="next">
-              <span><i class="fa fa-angle-right arrow"></i></span>
-              <span class="visually-hidden">Next</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>`;
+  </div>
+  </div>
+  `;
 
+  let slide = document.createElement('div');
+  slide.classList.add('carousel-item');
   slide.innerHTML = slideContent;
-
-  document.querySelector('.carousel-inner').appendChild(slide.cloneNode(true));
+  document.querySelector('#design-carousel > .carousel-inner').appendChild(slide.cloneNode(true));
 }
 
-const total = $('.sect-3-carousel > .carousel-item').length;
-let curr = $('div.active').index() + 1;
-$('.count').html('0'+curr+'/0'+total+'');
 
-$('#carouselSect3').on('slid.bs.carousel', function() {
+const total = $('#design-carousel > .carousel-inner > .carousel-item').length;
+let curr = $('.carousel-item.active').index() + 1;
+$('.count_slides').html('0'+curr+'/0'+total+'');
+
+$('#design-carousel').on('slid.bs.carousel', function() {
     curr = $('div.active').index() + 1;
-   $('.count').html('0'+curr+'/0'+total+'');
-});
-
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});
-
-$(".owl-carousel").owlCarousel({
-    nav: false,
-    dots: false,
-    loop: true,
-    margin: 30,
-    responsive: {
-      0: {
-        items: 1
-      },
-      1200: {
-        items: 2
-      }
-    },
-    autoplay:true,
-    autoplayTimeout:2000,
-    autoplayHoverPause:true
-});
-
-$('.go-next').click(function() {
-  $(".owl-carousel").trigger('next.owl.carousel');
-})
-$('.go-previous').click(function() {
-    $(".owl-carousel").trigger('prev.owl.carousel');
+   $('.count_slides').html('0'+curr+'/0'+total+'');
 });
 
 
-// $('form').submit(function (e) {
-//   e.preventDefault();
-//   let emailInput = $('#email').val();
-//   if(emailInput.match(/[a-zA-Z0-9]+@[(a-zA-Z0-9)+\.]/g)){
-//     $('#submit-btn').css({
-//       "background-color": "#33cccc",
-//       "color": "#000"
-//     });
-//     $('#email').val('');
-//     setTimeout(function() {
-//       $('#submit-btn').css({
-//         "background-color": "#16a086",
-//         "color": "#fff"
-//       });
-//     }, 3000)
-//   } else {
-//     $('#submit-btn').css({
-//       "background-color": "#ff6600",
-//       "color": "#000"
-//     });
-//     $('#email').val('');
-//     setTimeout(function() {
-//       $('#submit-btn').css({
-//         "background-color": "#16a086",
-//         "color": "#fff"
-//       });
-//     }, 3000)
-//   }
-// });
+let myOffcanvas = document.getElementById('offcanvasRight');
+let bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+document.getElementById("open-menu").addEventListener('click',function (e){
+  bsOffcanvas.toggle();
+});
 
 
 (function () {
@@ -155,3 +81,5 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     }
   );
 });
+
+AOS.init();

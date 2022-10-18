@@ -140,12 +140,15 @@
 }
 
 #header {
-  background-image: url("../../images/header/home-bg.jfif");
+  background-image: url("../../images/header/home-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
+#header nav .nav-item img {
+  margin-top: -1rem;
+}
 #header .main_content_wrapper {
-  padding: 21rem 0 14rem 0;
+  margin: 11rem 0 14rem 0;
 }
 #header .main_content_wrapper h1 {
   font-size: 2.25rem;
@@ -156,39 +159,24 @@
 }
 
 #subscribe {
-  background: url("../../images/subscribe/contact.jpg");
+  background: url("../../images/subscribe/section-5-bg.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
 }
 #subscribe .subscribe_title {
   padding-top: 21rem;
   padding-bottom: 1.7rem;
-  text-shadow: #000 1px 1px 10px;
 }
 #subscribe .subscribe_input {
   width: 21rem;
   padding-bottom: 20.5rem;
 }
 
-.nav_logo {
-  margin-top: -1rem;
-}
-
 .nav-item > a:hover {
-  color: red !important;
+  color: #1abc9c !important;
 }
 
 .white-color {
   filter: invert(1);
-}
-
-nav {
-  position: relative;
-}
-
-.nav-position {
-  position: absolute;
-  z-index: 2000;
 }
 
 @media screen and (max-width: 992px) {
@@ -225,7 +213,7 @@ nav {
   }
   .our_community_carousel_controls {
     position: relative;
-    top: 0;
+    top: 0rem;
     right: 0;
     left: 0;
     bottom: 0;
@@ -235,29 +223,6 @@ nav {
   .our_community_carousel_controls .control_prev_icon, .our_community_carousel_controls .control_next_icon {
     width: 2rem;
     height: 2rem;
-  }
-  .design_carousel_controls {
-    position: relative;
-    top: -7rem;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  .design_carousel_controls .control_buttons .control_prev_icon, .design_carousel_controls .control_buttons .control_next_icon {
-    padding: 0;
-    width: 2rem;
-    height: 2rem;
-  }
-  nav {
-    position: unset;
-  }
-  .nav-position {
-    position: fixed;
-    top: 0;
-    z-index: 2000;
-    background-color: #212331;
   }
 }
 @media screen and (max-width: 576px) {
@@ -273,8 +238,5 @@ nav {
   }
   .subscribe_input {
     width: 80% !important;
-  }
-  .move-next-line {
-    display: block;
   }
 }/*# sourceMappingURL=main.css.map */

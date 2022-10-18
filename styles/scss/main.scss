@@ -1,237 +1,233 @@
-.slant-right {
-      &:before {
-        content: '';
-        background: transparent;
-        float: right;
-        width: 15rem;
-        min-height: 10em;
-        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-        shape-outside: polygon(100% 0, 0% 100%, 100% 100%);
-      }
+:root {
+    font-size: 16px;
+}
+
+* :not(.fa):not(.fa-brands):not(.main_content_wrapper > p):not(.content_para){
+  font-family: gotham-rounded-bold, sans-serif;
+  letter-spacing: 0.2rem;
+}
+
+// Adjusting the bootstrap container width 
+.container {
+  max-width: 1024px;
+}
+
+// colors 
+
+$grey-bg: #f5f6f7;
+$green : #16a085;
+$green-2: #1abc9c;
+$white : #fff;
+$dark-grey : #5b5b5b;
+
+.green_color {
+  color: $green;
+}
+
+.grey-color {
+  color : $dark-grey;
+}
+
+// font and text 
+
+.gotham_md {
+  font-family: gotham-rounded-medium, sans-serif !important;
+}
+
+.gotham_light {
+  font-family: gotham-rounded-light, sans-serif !important;
+}
+
+.content_wrapper {
+  text-align: left;
+}
+
+.content_heading {
+  font-size: 1.1rem;
+}
+
+.content_para {
+  font-size: 0.7rem;
+
+  span {
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+.count_slides {
+  font-size: 0.6rem;
+}
+
+.small_text_1 {
+  font-size: 0.5rem;
+}
+
+.small_text_2 {
+  font-size: 0.62rem;
+  line-height: 2.5;
+}
+
+.small_text_3 {
+  font-size: 0.75rem;
+}
+
+.small_text_4 {
+  font-size: 0.8rem;
+}
+
+// button
+
+.my_btn {
+  color: $white;
+  font-size: 0.7rem;
+  background-color: $green;
+  padding: 1rem 2.5rem;
+}
+
+.icon_btn_style {
+  background-color: #16a085;
+  width: 4rem;
+  color: #fff;
+}
+
+.download_btn_style {
+  width: 15rem;
+  background-color: $green-2;
+  color: $white;
+}
+
+//carousel
+
+.design_carousel_controls {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 18rem;
+}
+
+.our_community_carousel_controls {
+  position: absolute;
+  top: 0rem;
+  right: -2.8rem;
+}
+
+.control_next, .control_prev {
+  position: relative;
+  display: inline;
+
+  .control_prev_icon, .control_next_icon {
+    padding: 0 2rem 0 1rem;
+    filter: invert(1);
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+// applying grey bg to sections
+
+#rappresent {
+  background-color: $grey-bg;
+}
+
+#our-community {
+  background-color: $grey-bg;
+}
+
+#download {
+  background-color: $grey-bg;
+}
+
+// wrappers 
+
+.wrapper {
+  padding: 7rem 0 6rem 0 !important;
+}
+
+
+// images 
+
+.phone_bg {
+  position: absolute;
+  width: 65%;
+  right: 0;
+  bottom: 0;
+}
+
+.move_img_left {
+  left: -0.4rem;
+  position: absolute;
+}
+
+// borders 
+
+.side_borders {
+  border-left: solid 3px $green;
+  border-right: solid 3px $green;
+}
+
+// sections
+
+#header {
+  background-image: url('../../images/header/home-bg.jfif');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .main_content_wrapper {
+    padding: 21rem 0 14rem 0;
+    
+    h1 {
+      font-size: 2.25rem;
+      letter-spacing: 0.3rem;
+    }
+    p{
+      letter-spacing: 0.15rem;
+    }
   }
 
-@font-face {
-    font-family: gothamBold;
-    src: url('../../font/Gotham-Rounded-Font/Gotham\ Rounded\ Bold.otf');
- }
-
- @font-face {
-    font-family: gotham;
-    src: url('../../font/Gotham-Rounded-Font/Gotham\ Rounded\ Medium.otf');
- }
-
- @font-face {
-    font-family: gothamLight;
-    src: url('../../font/Gotham-Rounded-Font/Gotham\ Rounded\ Light.otf');
- }
-
- @font-face {
-    font-family: gothamBook;
-    src: url('../../font/Gotham-Rounded-Font/Gotham\ Rounded\ Book.otf');
- }
-
- body {
-    font-family: gotham;
- }
-
- .home-bg {
-    // background-image: url('../../images/mg-bg.jpg');
-    background-image: url('../../images/home-bg.jfif');
-    background-size: cover;
-    background-position: center;
-    font-family: gothamBold;
-    filter: saturate(0.85);
-}
-
- .collapsing, .show {
-    background-color: rgba(255,255,255,0.3);
-    text-align: center;
-    color: #fff;
- }
- 
-.fa-brands {
-    transition: all ease-in-out .3s;
-}
-
- .fa-brands:hover {
-    transform: scale(2);
-    padding: 0 0.5em;
- }
-
-.carousel-control-prev, .carousel-control-next {
-    width: 2rem !important;
-    height: 2rem !important;
-}
-
-.sect-6-bg {
-    background-image: url('../../images/contact-bg.jpg');
-    background-size: cover;
-}
-
-::placeholder {
-    padding: 10px;
-    letter-spacing: 0.2rem;
-    font-weight: bold;
-}
-
-.nav-link {
-    border-radius: 10px;
-    &:hover {
-        color: #fff !important;
-        background-color: #f80d28 !important;
-        transition: background-color 0.5s ease-in;
-    }
-
-    &:active {
-        background-color: #169f84 !important;
-    }
-}
-
-.btn {
-    &.hover {
-        color: red !important;
-    }
-}
-
-.sect-topic {
-    line-height: 0.2rem;
-    font-size: 1.1rem;
-    font-family: gotham;
-    font-weight: bold;
-    color: #169f84;
-    letter-spacing: 0.2rem;
-}
-
-.sect-para {
-    font-size: 0.8rem;
-    word-spacing: 0.3rem;
-    letter-spacing: 0.1rem;
-    font-family: gothamBook;
-}
-
-.sect-btn {
-    width: 10rem;
-    padding: 1.1em 1rem;
-    // background-color: rgba(22,160,134,255);
-    background-color: #f80d28;
-    letter-spacing: 0.2em;
-    font-family: gotham;
-    font-size: 0.8rem;
-    
-    &:hover {
-        filter: saturate(0.5) contrast(2);
-        transition: filter 0.5s ease-in-out;
-    }
-}
-
-.grey-bg {
-    background-color: #f5f6f8;
 }
 
 
-.icon-btn {
-    border-radius: 0 0.25rem 0.25rem 0 !important;
-    height: 3.5rem;
-    width: 3.5rem;
-    background-color: #16a086;
-    
-    &:hover {
-        background-color: silver;
-    }
+#subscribe {
+  background: url('../../images/subscribe/contact.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .subscribe_title {
+    padding-top: 21rem;
+    padding-bottom: 1.7rem;
+    text-shadow: #000 1px 1px 10px;
+  }
+  
+  .subscribe_input {
+    width: 21rem;
+    padding-bottom: 20.5rem;
+  }
 }
 
-#submit-btn {
-    height: 4rem;
-    width: 4rem;
-    background-color: #16a086
+// nav logo and hover
+
+.nav_logo {
+  margin-top: -1rem;
 }
 
-.count {
-    margin-left: 7.5em;
-    font-family: gothamBook;
-    letter-spacing: 0.1rem;
-    font-size: 0.8rem;
-    font-weight: bolder;
+.nav-item > a:hover {
+  color: red !important;
 }
 
-.arrow {
-    font-size: 1.3rem; color: #000;
-}
+// offcanvas
 
-.icon-btn-group {
-    text-align: left;
-    height: 3.5rem;
-    background-color: #1bbc9b;
-    font-family: gotham;
-    letter-spacing: 0.1rem;
-}
-
-.footer-links {
-    text-decoration: none;
-    color: #474749;
+.white-color {
+  filter: invert(1);
 }
 
 
-.navbar-toggler {
-    width: 20px;
-    height: 20px;
-    position: relative;
+nav {
+  position: relative;
 }
 
-.navbar-toggler,
-.navbar-toggler:focus,
-.navbar-toggler.active,
-.navbar-toggler-icon:focus {
-    outline: none;
-    box-shadow: none;
-    border: 0;
+.nav-position {
+  position: absolute;
+  z-index: 2000;
 }
 
-.navbar-toggler span {
-    margin :0;
-    padding: 0;
-}
-
-.toggler-icon {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: #d3531a;
-    border-radius: 1px;
-    opacity: 1;
-    transition: 0.2s ease-in-out;
-}
-
-.middle-bar {
-    margin-top: 0;
-}
-
-.navbar-toggler .top-bar {
-    margin-top: 0;
-    transform: rotate(135deg);
-}
-
-.navbar-toggler .middle-bar {
-    opacity: 0;
-}
-
-.navbar-toggler .bottom-bar {
-    margin-top: 0;
-    transform: rotate(-135deg);
-}
-
-.navbar-toggler.collapsed .top-bar {
-    margin-top: -20px;
-    transform: rotate(0deg);
-}
-
-.navbar-toggler.collapsed .middle-bar {
-    opacity: 1;
-}
-
-.navbar-toggler.collapsed .bottom-bar {
-    margin-top: 20px;
-    transform: rotate(0deg);
-} 
-
+@import './responsive.scss/_responsive.scss';
